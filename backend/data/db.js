@@ -1,4 +1,8 @@
-const { Sequelize } = require("sequelize");
-const sequelize = new Sequelize("sqlite::memory:");
+import { Sequelize } from "sequelize";
 
-module.exports = sequelize;
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "./data/tienda.db",
+});
+
+export { sequelize };
